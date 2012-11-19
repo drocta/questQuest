@@ -1,0 +1,85 @@
+defun
+initQuest
+>ignt
+print here is where initializationstuff goes.
+
+
+
+defun
+entityAttacked
+>name
+print >name flinched
+
+
+#consider making entityAttacked be when it is attacked with strike, and entityDamaged when it is damaged
+#currently* entityAttacked is when it is damaged.
+
+defun
+mib
+>location
+isset location
+set junk _
+comp >junk 1
+evalif _ echo hasargument
+comp >junk 0
+evalif _ echo doesnothaveargument
+
+defun
+prompt2
+>varname >prompttext
+prompt >prompttext
+set >varname _
+
+defun
+unset
+>varname
+set >varname 
+
+defun
+teleport
+>location
+isset location
+set junk _
+evalif >junk set location2 >location
+#print >junk
+comp >junk 0
+set junk2 _
+evalif >junk2 prompt where will you teleport? home, testing_room:
+evalif >junk2 set location2 _
+evalif >junk2 set location >location2
+comp >location2 home
+evalif _ unsafego home
+comp >location2 testing_room
+evalif _ unsafego testing room
+print there is a bright green flash
+set junk2
+set junk
+set location 
+
+defun
+foo
+>a
+set junk
+evalif >junk echo yep1 
+isset junk
+print _
+isset junk
+evalif _ echo yep2.5
+equals >junk
+evalif _ echo 2.7
+set junk c
+evalif >junk echo yep3 
+isset junk
+evalif _ echo yep4
+set junk 
+
+defun
+tstf
+>cmd >arg1 >arg2
+evalif 1 >cmd >arg1 >arg2
+echo _
+
+defun
+ret2
+>thing
+add 2 0
